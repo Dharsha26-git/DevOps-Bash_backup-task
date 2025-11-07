@@ -115,6 +115,8 @@ Conclusion:
 This project demonstrates how to **automate file backups with Bash scripting**.
 It’s simple, reliable, and configurable — a great DevOps exercise for real-world automation tasks.
 
+
  
 
  
+
