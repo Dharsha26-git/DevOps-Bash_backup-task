@@ -54,7 +54,7 @@ Example Output:
 
 ./backup.sh --dry-run test_data
 
-**Output Example:**
+Output Example:
 
 Would backup folder test_data
 Would exclude .git, node_modules
@@ -70,9 +70,10 @@ Would delete old backup: backup-2025-10-25-1430.tar.gz
 
 Retention Policy:
 
-* Keep **7 daily** backups 
-* Keep **4 weekly** backups 
-* Keep **3 monthly** backups
+* Keep -7 daily backups 
+* Keep -4 weekly backups 
+* Keep -3 monthly backups
+
 * Delete anything older automatically.
 
 Example:
@@ -116,7 +117,10 @@ This project demonstrates how to **automate file backups with Bash scripting**.
 It’s simple, reliable, and configurable — a great DevOps exercise for real-world automation tasks.
 
 
- 
+ Author:Dharsha Kunduru
+ Date:07/11/2025
+ Subject: DevOps(Bash Scripting)
 
  
+
 
