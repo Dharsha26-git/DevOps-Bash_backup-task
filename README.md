@@ -50,7 +50,7 @@ Example Output:
 [2025-11-06 14:37:58] SUCCESS: Backup verified successfully!
 ```
 
-###  Step 3: Dry Run (Simulation Mode)
+ Step 3: Dry Run (Simulation Mode)
 
 ./backup.sh --dry-run test_data
 
@@ -122,5 +122,6 @@ It’s simple, reliable, and configurable — a great DevOps exercise for real-w
  Subject: DevOps(Bash Scripting)
 
  
+
 
 
