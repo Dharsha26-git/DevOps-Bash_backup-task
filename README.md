@@ -1,19 +1,28 @@
- Automated Backup System:
+                                            Automated Backup System
 
-Overview:
+1. Overview:
 
-This is a **Bash-based Automated Backup System** that creates secure and verified backups of your important folders.
+This is a Automated Backup System that creates secure and verified backups of your important folders to store.
 It compresses data, verifies integrity using checksums, and automatically deletes old backups to save disk space.
-You can also simulate backups (dry run) and track every operation through detailed logs.
 
-Features:
-*  Create compressed backups (`.tar.gz`)
-*  Generate & verify checksums for integrity
-*  Auto-delete old backups (daily, weekly, monthly)
-*  Configurable exclusions via config file
-*  Detailed logging for every operation
-*  Dry run mode to test without changes
-*  Lock file system to prevent duplicate runs
+
+2. Features:
+   
+->  Create compressed backups likewise tar.gz zip file.
+
+->  Generate & verify checksums for integrity
+
+->  Auto-delete old backups like daily,weekly,monthly.
+
+->  Configurable exclusions via config file.
+
+->  Detailed logging for every operation.
+
+->  Dry run mode to test without changes.
+
+->  Lock file system to prevent duplicate runs.
+
+  
 Project Structure:
 backup-system/
 ├── backup.sh          → Main backup script
@@ -122,6 +131,7 @@ It’s simple, reliable, and configurable — a great DevOps exercise for real-w
  Subject: DevOps(Bash Scripting)
 
  
+
 
 
 
