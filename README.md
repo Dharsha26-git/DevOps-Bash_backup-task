@@ -66,9 +66,40 @@ mkdir -p backups
 
 Step 2: Create a Backup:
 
-./backup.sh test_data
+ ./backup.sh test_data
 
-Sample Output:
+
+6. How it works:
+
+-> Takes an input folder and creates a timestamped ".tar.gz" archive.
+   
+-> Generates a "SHA256" checksum file and verifies it.
+
+-> Excludes unnecessary folders.
+
+-> Removes old backups based on configured limits.
+
+-> Logs every action to "backups/backup.log".
+
+
+
+7. Error Handling:
+   ---------------
+
+  The script handles common problems gracefully:
+
+
+  -> Missing folder   : Error: Source folder not found
+  
+ -> Missing config   : Error: Configuration file not found
+  
+  -> Low disk space   : Error: Not enough disk space for backup
+  
+  -> Permission issue : Error: Cannot read folder       
+
+
+8. Sample Output(backup.log):
+
 [2025-11-06 14:37:57] INFO: Starting backup of test_data
 
 [2025-11-06 14:37:57] SUCCESS: Backup created: backup-2025-11-06-1437.tar.gz
@@ -98,34 +129,6 @@ Sample Output:
 [2025-11-06 14:41:55] SUCCESS: Backup process completed successfully!
 
 
-6. How it works:
-
--> Takes an input folder and creates a timestamped ".tar.gz" archive.
-   
--> Generates a "SHA256" checksum file and verifies it.
-
--> Excludes unnecessary folders.
-
--> Removes old backups based on configured limits.
-
--> Logs every action to "backups/backup.log".
-
-
-
-7. Error Handling:
-
-  The script handles common problems gracefully:
-
-
-  -> Missing folder   : Error: Source folder not found
-  
- -> Missing config   : Error: Configuration file not found
-  
-  -> Low disk space   : Error: Not enough disk space for backup
-  
-  -> Permission issue : Error: Cannot read folder             
-
-
 Conclusion:
 
 This project demonstrates how to "automate file backups with Bash scripting".
@@ -139,6 +142,7 @@ This project demonstrates how to "automate file backups with Bash scripting".
  Subject: DevOps(Bash Scripting)
 
  
+
 
 
 
