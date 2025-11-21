@@ -23,107 +23,113 @@ It compresses data, verifies integrity using checksums, and automatically delete
 ->  Lock file system to prevent duplicate runs.
 
   
-Project Structure:
+3. Project Structure:
+
 backup-system/
-├── backup.sh          → Main backup script
-├── backup.config      → Configuration file
-├── backups/           → Folder for backups & logs
-└── README.md          → Project documentation
 
-Configuration File (`backup.config`):
+├── backup.sh    
+
+├── backup.config
+
+|── README.md
+
+|── backups/  
+  ├── backup-2025-11-06-1437.tar.gz
+  
+  ├── backup-2025-11-06-1437.tar.gz.sha256
+  
+  └── backup.log
+
+         
+
+4. Backup.config File:
+   
 BACKUP_DESTINATION=./backups
+
 EXCLUDE_PATTERNS=".git,node_modules,.cache"
+
 DAILY_KEEP=7
+
 WEEKLY_KEEP=4
+
 MONTHLY_KEEP=3
-Notes:
 
-* `BACKUP_DESTINATION`: where backups are stored
-* `EXCLUDE_PATTERNS`: folders/files to ignore
-* `DAILY_KEEP`, `WEEKLY_KEEP`, `MONTHLY_KEEP`: backup rotation limits
 
-Usage Guide:
+
+5. How to run:
 
 Step 1: Setup
 
 chmod +x backup.sh
+
 mkdir -p backups
 
 Step 2: Create a Backup:
 
 ./backup.sh test_data
 
-Example Output:
+Sample Output:
 [2025-11-06 14:37:57] INFO: Starting backup of test_data
+
 [2025-11-06 14:37:57] SUCCESS: Backup created: backup-2025-11-06-1437.tar.gz
-[2025-11-06 14:37:58] SUCCESS: Backup verified successfully!
-```
 
- Step 3: Dry Run (Simulation Mode)
+[2025-11-06 14:37:57] INFO: Checksum file created: backup-2025-11-06-1437.tar.gz.sha256
 
-./backup.sh --dry-run test_data
+[2025-11-06 14:37:57] SUCCESS: Backup archive integrity verified!
 
-Output Example:
+[2025-11-06 14:37:57] INFO: Cleaning old backups...
 
-Would backup folder test_data
-Would exclude .git, node_modules
-Would delete old backup: backup-2025-10-25-1430.tar.gz
+[2025-11-06 14:37:58] INFO: No old backups to delete.
 
- How It Works:
+[2025-11-06 14:37:58] SUCCESS: Backup process completed successfully!
 
-1. Takes an input folder and creates a timestamped `.tar.gz` archive.
-2. Generates a `SHA256` checksum file and verifies it.
-3. Excludes unnecessary folders (like `.git`, `node_modules`).
-4. Removes old backups based on configured limits.
-5. Logs every action to `backups/backup.log`.
+[2025-11-06 14:41:54] INFO: Starting backup of test_data
 
-Retention Policy:
+[2025-11-06 14:41:55] SUCCESS: Backup created: backup-2025-11-06-1441.tar.gz
 
-* Keep -7 daily backups 
-* Keep -4 weekly backups 
-* Keep -3 monthly backups
+[2025-11-06 14:41:55] INFO: Checksum file created: backup-2025-11-06-1441.tar.gz.sha256
 
-* Delete anything older automatically.
+[2025-11-06 14:41:55] SUCCESS: Backup archive integrity verified!
 
-Example:
-[2025-11-06 14:37:57] INFO: Starting backup of test_data
-[2025-11-06 14:37:57] SUCCESS: Backup created successfully
-[2025-11-06 14:37:58] INFO: Cleaning old backups
+[2025-11-06 14:41:55] INFO: Cleaning old backups...
 
-Error Handling:
+[2025-11-06 14:41:55] INFO: No old backups to delete.
 
-The script handles common problems gracefully:
+[2025-11-06 14:41:55] SUCCESS: Backup process completed successfully!
 
-| Error Type       | Example Message                            |
-| ---------------- | ------------------------------------------ |
-| Missing folder   | `Error: Source folder not found!`          |
-| Missing config   | `Error: Configuration file not found!`     |
-| Low disk space   | `Error: Not enough disk space for backup!` |
-| Permission issue | `Error: Cannot read folder!`               |
 
-Testing Summary:
+6. How it works:
 
-* Created new backups successfully
-* Verified checksums after creation
-* Tested dry run and exclusion patterns
-* Confirmed rotation deletes older backups
-* Validated error messages for edge cases
+-> Takes an input folder and creates a timestamped ".tar.gz" archive.
+   
+-> Generates a "SHA256" checksum file and verifies it.
 
-Known Limitations:
+-> Excludes unnecessary folders.
 
-* Email notifications not yet implemented
-* Incremental backups (changed files only) not supported
-* Restore feature is optional and basic
+-> Removes old backups based on configured limits.
 
-Example Backup Folder:
-backups/
-├── backup-2025-11-06-1437.tar.gz
-├── backup-2025-11-06-1437.tar.gz.sha256
-└── backup.log
+-> Logs every action to "backups/backup.log".
+
+
+
+7. Error Handling:
+
+  The script handles common problems gracefully:
+
+
+  -> Missing folder   : Error: Source folder not found
+  
+ -> Missing config   : Error: Configuration file not found
+  
+  -> Low disk space   : Error: Not enough disk space for backup
+  
+  -> Permission issue : Error: Cannot read folder             
+
+
 Conclusion:
 
-This project demonstrates how to **automate file backups with Bash scripting**.
-It’s simple, reliable, and configurable — a great DevOps exercise for real-world automation tasks.
+This project demonstrates how to "automate file backups with Bash scripting".
+
 
 
  Author:Dharsha Kunduru
@@ -131,6 +137,7 @@ It’s simple, reliable, and configurable — a great DevOps exercise for real-w
  Subject: DevOps(Bash Scripting)
 
  
+
 
 
 
