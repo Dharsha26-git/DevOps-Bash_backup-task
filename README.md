@@ -1,12 +1,14 @@
                                             Automated Backup System
 
 1. Overview:
+------------
 
 This is a Automated Backup System that creates secure and verified backups of your important folders to store.
 It compresses data, verifies integrity using checksums, and automatically deletes old backups to save disk space.
 
 
 2. Features:
+------------
    
 ->  Create compressed backups likewise tar.gz zip file.
 
@@ -24,6 +26,7 @@ It compresses data, verifies integrity using checksums, and automatically delete
 
   
 3. Project Structure:
+---------------------
 
 backup-system/
 
@@ -43,6 +46,7 @@ backup-system/
          
 
 4. Backup.config File:
+----------------------
    
 BACKUP_DESTINATION=./backups
 
@@ -57,6 +61,7 @@ MONTHLY_KEEP=3
 
 
 5. How to run:
+--------------
 
 Step 1: Setup
 
@@ -70,6 +75,7 @@ Step 2: Create a Backup:
 
 
 6. How it works:
+----------------
 
 -> Takes an input folder and creates a timestamped ".tar.gz" archive.
    
@@ -84,7 +90,7 @@ Step 2: Create a Backup:
 
 
 7. Error Handling:
-   ---------------
+------------------
 
   The script handles common problems gracefully:
 
@@ -99,6 +105,7 @@ Step 2: Create a Backup:
 
 
 8. Sample Output(backup.log):
+-----------------------------
 
 [2025-11-06 14:37:57] INFO: Starting backup of test_data
 
@@ -129,11 +136,13 @@ Step 2: Create a Backup:
 [2025-11-06 14:41:55] SUCCESS: Backup process completed successfully!
 
 
-Conclusion:
+9. Conclusion:
+--------------
 
 This project demonstrates how to "automate file backups with Bash scripting".
 
 
+--------------------------------------------------------------------------------------------------------
 
  Author:Dharsha Kunduru
  
@@ -142,6 +151,7 @@ This project demonstrates how to "automate file backups with Bash scripting".
  Subject: DevOps(Bash Scripting)
 
  
+
 
 
 
