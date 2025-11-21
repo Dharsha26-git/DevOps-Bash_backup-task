@@ -6,6 +6,7 @@
 
 
 This is a Automated Backup System that creates secure and verified backups of your important folders to store.
+
 It compresses data, verifies integrity using checksums, and automatically deletes old backups to save disk space.
 
 
@@ -162,6 +163,7 @@ This project demonstrates how to "automate file backups with Bash scripting".
  Subject: DevOps(Bash Scripting)
 
  
+
 
 
 
